@@ -17,12 +17,15 @@ def get_user_details(user_id):
 
     return jsonify(user_detail), 200
 
-
 @app.route("/create-user", methods=["POST"])
 def create_user():
+    # this part should point to a database entity to save 
+    # the posted information
     user_details = request.get_json()
-    # jsonify(user_details)
-    return "success", 201
+
+    return jsonify(user_details), 201
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
